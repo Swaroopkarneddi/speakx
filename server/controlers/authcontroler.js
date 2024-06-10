@@ -59,7 +59,12 @@ const loginuser = async (req, res) => {
     if (match) {
       // res.json("pasword match");
       jwt.sign(
-        { email: user.email, id: user._id, name: user.name },
+        {
+          email: user.email,
+          id: user._id,
+          name: user.name,
+          username: user.username,
+        },
         process.env.JWT_SECRET,
         {},
         (err, token) => {
@@ -80,9 +85,23 @@ const loginuser = async (req, res) => {
     console.log(error);
   }
 };
+const getprofile = (req, res) => {
+  const { token } = req.cookies;
+  if (token) {
+    jwt.verify(token, process.env.JWT_SECRET, {}, (err, user) => {
+      if (err) {
+        throw err;
+      }
+      res.json(user);
+    });
+  } else {
+    res.json(null);
+  }
+};
 
 module.exports = {
   test,
   registeruser,
   loginuser,
+  getprofile,
 };

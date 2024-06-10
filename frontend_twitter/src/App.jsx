@@ -7,13 +7,14 @@ import Sugestions from "./maincomponents/Sugestions";
 import Login from "./maincomponents/Login";
 import Register from "./maincomponents/Register";
 import axios from "axios";
+import { UserContextProvider } from "../context/userContext";
 
 import { Toaster } from "react-hot-toast";
 axios.defaults.baseURL = "http://localhost:8000";
 axios.defaults.withCredentials = true;
 function App() {
   return (
-    <>
+    <UserContextProvider>
       <div className="main">
         <Toaster position="bottom-right" toastOptions={{ duration: 2000 }} />
         <Routes>
@@ -25,7 +26,7 @@ function App() {
             <Sugestions /> */}
         </Routes>
       </div>
-    </>
+    </UserContextProvider>
   );
 }
 

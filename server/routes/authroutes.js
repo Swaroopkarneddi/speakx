@@ -5,6 +5,7 @@ const {
   test,
   registeruser,
   loginuser,
+  getprofile,
 } = require("../controlers/authcontroler");
 router.use(
   cors({
@@ -16,5 +17,6 @@ router.use(
 router.get("/", test);
 router.post("/register", registeruser);
 router.post("/login", loginuser);
+router.get("/profile", getprofile);
 
 module.exports = router;
