@@ -16,12 +16,14 @@ function App() {
     <>
       <div className="main">
         <Toaster position="bottom-right" toastOptions={{ duration: 2000 }} />
-
-        <Login />
-        {/* <Register /> */}
-        {/* <Sidebar />
-        <Feed />
-        <Sugestions /> */}
+        <Routes>
+          <Route path="/" element={<Feed />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          {/* <Sidebar />
+            <Feed />
+            <Sugestions /> */}
+        </Routes>
       </div>
     </>
   );
