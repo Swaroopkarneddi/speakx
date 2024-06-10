@@ -1,0 +1,10 @@
+.sugestions {
+    flex: 0.3;
+}
+
+.sugestions_profiles {
+    border: solid 2px;
+    border-radius: 15px;
+    margin: 10px 20px;
+    padding: 10px;
+}

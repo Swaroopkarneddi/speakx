@@ -1,0 +1,25 @@
+.profiles {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.profile_text {
+    margin-left: 8px;
+}
+
+.profile_verified {
+    font-size: 15px !important;
+}
+
+.profile_follow {
+    margin-left: auto;
+}
+
+.profile_follow_Button {
+    background-color: white !important;
+    color: black;
+    border-radius: 10px;
+    width: 50px;
+    height: 30px;
+}

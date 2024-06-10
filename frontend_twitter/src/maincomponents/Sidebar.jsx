@@ -16,7 +16,7 @@ function Sidebar() {
   return (
     <div className="sidebar">
       <XIcon className="mainicon" />
-      <SidebarOptions text="Home" Icon={HomeIcon} />
+      <SidebarOptions text="Home" Icon={HomeIcon} active />
       <SidebarOptions text="Explore" Icon={SearchIcon} />
       <SidebarOptions text="Notification" Icon={NotificationsIcon} />
       <SidebarOptions text="Messages" Icon={MailOutlineIcon} />

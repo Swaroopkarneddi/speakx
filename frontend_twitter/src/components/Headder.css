@@ -12,6 +12,8 @@
 .tweetbox_input {
     padding: 10px;
     display: flex;
+    /* color: whitesmoke !important; */
+    /* background-color: black !important; */
 }
 
 .tweetbox_input>input {
@@ -20,6 +22,8 @@
     font-size: 20px;
     border: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.345);
+    color: whitesmoke !important;
+    background-color: black !important;
 }
 
 .tweetbox_inputimage {

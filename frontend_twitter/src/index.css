@@ -1,6 +1,11 @@
 * {
     margin: 0;
-    background-color: black;
+    /* background-color: black; */
     font-family: sans-serif;
+    /* color: whitesmoke; */
+}
+
+body {
+    background-color: black;
     color: whitesmoke;
 }
