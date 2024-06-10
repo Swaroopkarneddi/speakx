@@ -7,7 +7,7 @@ const test = (req, res) => {
 
 const registeruser = async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { name, username, email, password } = req.body;
     if (!name) {
       return res.json({
         error: "name is required",
@@ -24,11 +24,18 @@ const registeruser = async (req, res) => {
         error: "email is taken already",
       });
     }
+    const exist2 = await User.findOne({ username });
+    if (exist2) {
+      return res.json({
+        error: "username is taken already",
+      });
+    }
 
     const hashedpassword = await hashpassword(password);
 
     const user = await User.create({
       name,
+      username,
       email,
       password: hashedpassword,
     });
