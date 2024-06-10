@@ -1,3 +1,9 @@
+.sidebar {
+    flex: 0.3;
+}
+
 .mainicon {
     color: whitesmoke !important;
+    font-size: 40px !important;
+    padding-left: 10px;
 }
