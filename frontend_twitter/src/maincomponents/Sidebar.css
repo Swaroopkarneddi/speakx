@@ -1,5 +1,6 @@
 .sidebar {
-    flex: 0.3;
+    flex: 0.2;
+    margin-top: 10px;
 }
 
 .mainicon {
