@@ -108,27 +108,7 @@ const newpost = async (req, res) => {
         error: "text is required",
       });
     }
-    // if (!password || password.length < 6) {
-    //   return res.json({
-    //     error: "password is required",
-    //   });
-    // }
-    // const exist = await User.findOne({ email });
-    // if (exist) {
-    //   return res.json({
-    //     error: "email is taken already",
-    //   });
-    // }
-    // const exist2 = await User.findOne({ username });
-    // if (exist2) {
-    //   return res.json({
-    //     error: "username is taken already",
-    //   });
-    // }
-
-    // const hashedpassword = await hashpassword(password);
-
-    const post = await User.create({
+    const post = await Post.create({
       displayname,
       username,
       verified,
@@ -142,10 +122,20 @@ const newpost = async (req, res) => {
   }
 };
 
+const feed = async (req, res) => {
+  try {
+    const posts = await Post.find();
+    res.json(posts);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 module.exports = {
   test,
   registeruser,
   loginuser,
   getprofile,
   newpost,
+  feed,
 };

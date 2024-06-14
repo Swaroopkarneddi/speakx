@@ -8,7 +8,7 @@ import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import RepeatIcon from "@mui/icons-material/Repeat";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import PublishIcon from "@mui/icons-material/Publish";
-function Post({ displayName, username, verified, text, image, avatar }) {
+function Post({ key, displayName, username, verified, text, image, avatar }) {
   return (
     <div className="post">
       <div className="post__avatar">
