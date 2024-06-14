@@ -11,6 +11,7 @@ function Headder() {
           <Avatar src="https://www.rollingstone.com/wp-content/uploads/2023/02/elon-twitter-new-ceo.jpg?w=1581&h=1054&crop=1" />
           <input placeholder="what's happening ?" type="text" />
         </div>
+        <input placeholder="upload url" type="text" className="url_input" />
 
         {/* <input
           className="tweetbox_inputimage"1

@@ -1,4 +1,5 @@
 const User = require("../models/User");
+const Post = require("../models/Posts");
 const jwt = require("jsonwebtoken");
 const { hashpassword, comparepassword } = require("../helpers/auth");
 const test = (req, res) => {
@@ -99,9 +100,52 @@ const getprofile = (req, res) => {
   }
 };
 
+const newpost = async (req, res) => {
+  try {
+    const { displayname, username, verified, text, image, avatar } = req.body;
+    if (!text) {
+      return res.json({
+        error: "text is required",
+      });
+    }
+    // if (!password || password.length < 6) {
+    //   return res.json({
+    //     error: "password is required",
+    //   });
+    // }
+    // const exist = await User.findOne({ email });
+    // if (exist) {
+    //   return res.json({
+    //     error: "email is taken already",
+    //   });
+    // }
+    // const exist2 = await User.findOne({ username });
+    // if (exist2) {
+    //   return res.json({
+    //     error: "username is taken already",
+    //   });
+    // }
+
+    // const hashedpassword = await hashpassword(password);
+
+    const post = await User.create({
+      displayname,
+      username,
+      verified,
+      text,
+      image,
+      avatar,
+    });
+    return res.json(post);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 module.exports = {
   test,
   registeruser,
   loginuser,
   getprofile,
+  newpost,
 };

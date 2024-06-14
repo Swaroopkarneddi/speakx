@@ -26,6 +26,16 @@
     background-color: black !important;
 }
 
+.url_input {
+    margin: 2px 10px 10px auto;
+    font-size: 20px;
+    border: none;
+    width: 87%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.345);
+    color: whitesmoke !important;
+    background-color: black !important;
+}
+
 .tweetbox_inputimage {
     border: none;
     padding: 10px;
