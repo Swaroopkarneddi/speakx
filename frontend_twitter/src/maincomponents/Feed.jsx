@@ -5,9 +5,10 @@ import Post from "../components/Post";
 import { useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { Button } from "@mui/material";
 function Feed() {
   const [data, setdata] = useState([]);
-
+  const [refresh, setRefresh] = useState(false);
   // const { displayname, username, verified, text, image, avatar } = data;
   useEffect(() => {
     const fetchdata = async () => {
@@ -24,11 +25,16 @@ function Feed() {
     };
 
     fetchdata();
-  }, []);
+  }, [refresh]);
+
+  const handleRefresh = () => {
+    setRefresh(!refresh);
+  };
 
   return (
     <div className="feed">
       <Headder />
+      <Button onClick={handleRefresh}>REFRESH</Button>
       {data.map((post, index) => (
         <Post
           key={index}

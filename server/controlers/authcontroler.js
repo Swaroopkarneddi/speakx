@@ -124,7 +124,7 @@ const newpost = async (req, res) => {
 
 const feed = async (req, res) => {
   try {
-    const posts = await Post.find();
+    const posts = await Post.find().sort({ createdAt: -1 });
     res.json(posts);
   } catch (error) {
     console.log(error);
