@@ -34,7 +34,9 @@ function Feed() {
   return (
     <div className="feed">
       <Headder />
-      <Button onClick={handleRefresh}>REFRESH</Button>
+      <Button onClick={handleRefresh} className="feed_refresh">
+        REFRESH
+      </Button>
       {data.map((post, index) => (
         <Post
           key={index}
